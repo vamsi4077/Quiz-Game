@@ -1,21 +1,12 @@
-/*
-concepts to learn:
-fscanf()
-fprintf()
-atoi()
-*/
 
-/* I'm gonna kill the actual size of the program by extensve use of functions to reuse code as much as possible. If done in a stupid way, the size of this thing could've gone upto a thousand lines! */
-
-//...................................................HEADER FILES....................................................................................................................................................
 #include<stdio.h>
 #include<stdlib.h>//to use the system("cls") function
 
-//...................................................GLOBAL VARIBLE DECLARATION so that variables can be used in any function.........................................................................................
+
 int i, coins=0, highscore=0;
 char name[20], input, ans;
 
-//...................................................PROTOTYPE DECLARATION for functions being used in the program....................................................................................................
+
 void main_menu();
 void correct();
 void incorrect();
@@ -24,19 +15,18 @@ void high_score();
 void alter_high_score();
 void ask_question(int value_of_question_in_coins, char question[200] , char a[100] , char b[100] , char c[100] , char d[100] , char correct_ans_small, char correct_ans_capital);
 
-//...................................................MAIN FUNCTION.....................................................................................................................................................
 
 void main()
 {
 	printf("Please type your name and press enter- ");
 	fflush(stdin);
-	gets(name);//gets used to accept whole name with spaces in between
-	system("cls");//In devcpp, can't use include conio.h to use clrscr(as conio.h is not a standard c language library.) So included stdlib.h and used sustem("cls")
-	printf("\n\nHello %s! \n\n\n...................welcome to....................\n...........\'KAUN   BANEGA   COIN-PATI\'........... ",name);
+	gets(name);
+	system("cls");
+	printf("\n\nHello %s! \n\n\nwelcome to 'quizup game \'........... ",name);
 	main_menu();	
 }
 
-//...................................................all OTHER FUNCTIONS...............................................................................................................................................
+
 
 void main_menu()
 {	
