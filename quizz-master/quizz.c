@@ -1,7 +1,6 @@
 
 #include<stdio.h>
-#include<stdlib.h>//to use the system("cls") function
-
+#include<stdlib.h>
 
 int i, coins=0, highscore=0;
 char name[20], input, ans;
@@ -81,7 +80,7 @@ void main_menu()
 				{
 					system("cls");
 					printf("illegal input");
-					main_menu();//just take the user back to the main menu....
+					main_menu();
 				
 				}
 				
@@ -104,7 +103,7 @@ void main_menu()
 				{
 					system("cls");
 					printf("illegal input");
-					main_menu();//just take the user back to the main menu....
+					main_menu();
 				
 				}
 				
@@ -120,7 +119,7 @@ void main_menu()
 				{	
 					system("cls");
 					printf("\nThank you for playing!");
-					exit(0);// 0 means exit the program without nay error messages(if any).
+					exit(0);
 				}	
 				else if(what== 'N' || what=='n')
 				{
@@ -153,7 +152,7 @@ void main_menu()
 				{
 					system("cls");
 					printf("illegal input");
-					main_menu();//just take the user back to the main menu....
+					main_menu();
 				}
 				 break;
 				
@@ -226,23 +225,22 @@ void high_score()
 void alter_high_score()
 {	
    FILE *file_pointer, *file_pointer1, *file_pointer2;  
-   char highscore_as_char[10];//creating char array to store data of file  
+   char highscore_as_char[10];
    
    file_pointer= fopen("quiz_highscore.txt", "r");  
 
    while(fscanf(file_pointer, "%s", highscore_as_char)!=EOF)
    {  
-   		//printf("%s ", buff );  
+   		
    }   
    
-   highscore = atoi(highscore_as_char);//converts char to int
-   
+   highscore = atoi(highscore_as_char);
    if(coins>highscore)
    {
    		highscore=coins;
    		printf("\n\n************************************\nCongratulations %s!\nYou have made a new highscore of %d coins !\n************************************",name,coins);
    	
-		file_pointer1=fopen("quiz_highscore.txt","w");// the w mode overwrites and clears all data in the txt file...
+		file_pointer1=fopen("quiz_highscore.txt","w");
 		file_pointer2=fopen("quiz_highscore_holder.txt","w");
 	
 		if(file_pointer1==NULL || file_pointer2 ==NULL)
@@ -262,7 +260,7 @@ void alter_high_score()
    }
    else if(coins=highscore)
    {
-   		printf("\n\n*****************************************\nYou have earned %d coins %s.\nThat is the same as the current highscore!\n*****************************************",coins,name);
+   		printf("\n\n\nYou have earned %d coins %s.\nThat is the same as the current highscore!\n",coins,name);
    }
     
     printf("\n\npress E to exit.\n\nPress any other key to go back to main menu.");
